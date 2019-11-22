@@ -49,12 +49,12 @@ systemctl daemon-reload
 systemctl restart kubelet
 
 ##create master node
-kubeadm reset
+kubeadm reset -y
 kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 10.239.48.145 --node-name master --ignore-preflight-errors=all
 
 ##configure env
 mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config -y
 chown $(id -u):$(id -g) $HOME/.kube/config
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
