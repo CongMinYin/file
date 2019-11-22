@@ -49,7 +49,6 @@ systemctl daemon-reload
 systemctl restart kubelet
 
 ##create master node
-kubeadm reset
 kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 10.239.48.145 --node-name master --ignore-preflight-errors=all
 
 ##configure env
