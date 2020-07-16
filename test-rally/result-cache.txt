@@ -1,0 +1,22 @@
+2020年 05月 07日 星期四 21:52:42 CST
+serial create 2 vms test
+test1 active: 9s
+test1 whole: 98s
+test2 active: 8s
+test2 whole: 69s
+parallel create 2 vms test
+test3 active: 9s
+test3 whole: 63s
+test4 active: 12s
+test4 whole: 69s
+2 vms paralle time: 72s
+parallel create 4 vms test
+test7 active: 12s
+test7 whole: 79s
+test8 active: 12s
+test8 whole: 82s
+test6 active: 14s
+test6 whole: 82s
+test5 active: 10s
+test5 whole: 83s
+4 vms paralle time: 85s

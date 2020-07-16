@@ -1,0 +1,32 @@
+{
+    "NovaServers.boot_ping_and_delete_server": [
+        {
+            "args": {
+                "flavor": {
+                    "name": "ubuntu"
+                },
+                "image": {
+                    "name": "ubuntu-snapshot"
+                },
+                "force_delete": false,
+                "auto_assign_nic": true,
+                "nics":[
+                    "net-id": "25bee494-8157-4d5f-b9c0-505be24881fc"
+                ]
+            },
+            "runner": {
+                "type": "constant",
+                "times": 1,
+                "concurrency": 1
+            },
+            "context": {
+                "users": {
+                    "tenants": 4,
+                    "users_per_tenant": 2
+                },
+                "network":{
+                }
+            }
+        }
+    ]
+}

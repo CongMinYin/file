@@ -1,0 +1,38 @@
+{
+    "NovaServers.boot_server_and_attach_interface": [
+        {
+            "args": {
+                "flavor": {
+                    "name": "ubuntu"
+                },
+                "image": {
+                    "name": "ubuntu-snapshot"
+                },
+                "network_create_args": {},
+                "subnet_create_args": {},
+                "subnet_cidr_start": "192.168.3.0/24",
+                "boot_server_args": {
+                }
+            },
+            "runner": {
+                "type": "constant",
+                "times": 2,
+                "concurrency": 1 
+            },
+            "context": {
+                "network": {},
+                "users": {
+                    "tenants": 1,
+                    "users_per_tenant": 1
+                },
+                 "quotas": {
+                     "neutron": {
+                         "network": -1,
+                         "subnet": -1
+                    }
+                },
+                "allow_ssh":
+            }
+        }
+    ]
+}
